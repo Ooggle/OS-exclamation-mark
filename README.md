@@ -1,7 +1,7 @@
 # OS!
-kernel and OS development project
+OS! is a kernel and OS development project
 
-### Compiling dependencies
+### Compilation dependencies
 ```sh
 sudo apt install make nasm gcc genisoimage
 ```
