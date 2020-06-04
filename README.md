@@ -1,4 +1,4 @@
-# squadOS
+# OS!
 kernel and OS development project
 
 ### Compiling dependencies
