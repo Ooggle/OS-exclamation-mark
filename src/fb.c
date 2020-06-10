@@ -71,7 +71,7 @@ unsigned short int fb_get_cursor_position()
     return pos;
 }
 
-void write(char *buf, unsigned int len)
+void fb_write(char *buf, unsigned int len)
 {
     unsigned short pos = fb_get_cursor_position();
 
@@ -82,7 +82,7 @@ void write(char *buf, unsigned int len)
         pos = 0;
     }
 
-    for(int i = 0; i < len; i++)
+    for(unsigned int i = 0; i < len; i++)
     {   
         char *fb = (char *) 0x000B8000 + (pos * 2) + (i * 0x2);
         fb[0] = (char) buf[i];

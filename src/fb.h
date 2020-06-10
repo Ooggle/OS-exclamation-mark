@@ -64,7 +64,7 @@ unsigned short int fb_get_cursor_position();
  *  \param buf The buffer to write
  *  \param len The len of the buffer
  */
-void write(char *buf, unsigned int len);
+void fb_write(char *buf, unsigned int len);
 
 /*! \brief Return to the beginning of the next line
  */
