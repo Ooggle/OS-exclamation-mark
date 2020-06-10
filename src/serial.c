@@ -32,11 +32,11 @@ int serial_is_transmit_fifo_empty(unsigned int com)
 
 void serial_write(unsigned int com, char *buf, unsigned int len)
 {
-    //while(serial_is_transmit_fifo_empty(com) != 1);
     for(unsigned int i = 0; i < len; i++)
     {
+        while(serial_is_transmit_fifo_empty(com) == 0);
         outb(com, (char) buf[i]);
-        for(int y = 0; y < 3000000; y++);
+        //for(int y = 0; y < 3000000; y++);
     }
 }
 

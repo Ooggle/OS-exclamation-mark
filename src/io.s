@@ -1,5 +1,6 @@
 global outb
 global inb
+global lgdt
 
 ; outb - send a byte to an I/O port
 ;
@@ -20,3 +21,14 @@ inb:
 mov DX, [esp + 4]
 in AL, DX
 ret
+
+; lgdt - initialize a gdt structure
+;
+; register: [eax] the address where initialize the structure
+lgdt:
+
+ret
+
+
+
+

@@ -10,7 +10,7 @@
  *         
  *         All the I/O ports are calculated relative to the data port.
  *         This is because all serial ports (COM1, COM2, COM3, COM4)
- *         have their ports in the same order, but thez start at different
+ *         have their ports in the same order, but they start at different
  *         values.
  */
 #define SERIAL_COM1_BASE 0x3F8
@@ -53,6 +53,12 @@ void serial_configure_line(unsigned int com);
  */
 int serial_is_transmit_fifo_empty(unsigned int com);
 
+/*! \brief Write the content of the buffer to the chosen serial port
+ *  
+ *  \param com The I/O port of the serial
+ *  \param buf The buffer to write
+ *  \param len The length of the buffer
+ */
 void serial_write(unsigned int com, char *buf, unsigned int len);
 
 #endif

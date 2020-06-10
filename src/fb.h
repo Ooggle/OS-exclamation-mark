@@ -37,13 +37,23 @@ void fb_move_cursor_simple(int pos);
  *  \param len The lenght of the text
  *  \param line The line of witch the text will be displayed (0 to 24)
  *  \param offset The off to space up the text from the left
+ *  \param fg_color The foreground color used to display text
+ *  \param bg_color The background color used to display text
  *  \param blink 0 or 1, blink switch
  */
-void fb_write_text(char *text, int len, int line, int offset, int blink);
+void fb_write_text(char *text, int len, int line, int offset, unsigned char fg_color, unsigned char bg_color, int blink);
 
 /*! \brief Clear the framebuffer
  */
 void fb_clear_screen();
+
+/*! \brief Disable the framebuffer blink bit
+ */
+void fb_disable_blink();
+
+/*! \brief Enable the framebuffer blink bit
+ */
+void fb_enable_blink();
 
 /*! \brief Enable the cursor
  */
@@ -59,10 +69,10 @@ void fb_disable_cursor();
  */
 unsigned short int fb_get_cursor_position();
 
-/*! \brief Write the content of the buffer and align the cursor
+/*! \brief Write the content of the buffer to the framebuffer and align the cursor
  *  
  *  \param buf The buffer to write
- *  \param len The len of the buffer
+ *  \param len The length of the buffer
  */
 void fb_write(char *buf, unsigned int len);
 
